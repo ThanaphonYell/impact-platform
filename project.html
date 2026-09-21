@@ -47,7 +47,7 @@
                 IMPACT<span class="text-neo-pink">.</span>
             </a>
             <a href="club.html" class="text-xs font-black tracking-widest uppercase bg-neo-yellow border-2 border-black px-4 py-2 shadow-[2px_2px_0_0_#000] rotate-2 hover:rotate-0 transition-transform">
-                BACK TO TIMELINE
+                ROTARACT BU TIMELINE
             </a>
         </div>
     </nav>
@@ -62,8 +62,13 @@
 
         <div class="max-w-6xl w-full mx-auto relative z-20 flex flex-col lg:flex-row gap-12 items-center">
             <div class="lg:w-1/2">
-                <div class="inline-block bg-white border-4 border-black text-xs font-black uppercase px-4 py-2 mb-6 shadow-neo transform -rotate-2">
-                    LATEST CAMPAIGN
+                <div class="flex flex-wrap gap-4 mb-6">
+                    <div class="inline-block bg-white border-4 border-black text-xs font-black uppercase px-4 py-2 shadow-neo transform -rotate-2">
+                        LATEST CAMPAIGN
+                    </div>
+                    <a href="club.html" class="inline-block bg-neo-yellow border-4 border-black text-black text-xs font-black uppercase px-4 py-2 shadow-neo transform rotate-2 hover:-translate-y-1 transition-all group">
+                        <span class="opacity-70 group-hover:opacity-100">🏫 HOST:</span> ROTARACT BU
+                    </a>
                 </div>
                 
                 <h1 class="text-5xl md:text-7xl font-black mb-6 uppercase tracking-tight leading-[0.9] text-black" style="-webkit-text-stroke: 2px black; color: white; text-shadow: 4px 4px 0px #000;">
@@ -272,41 +277,36 @@
     </footer>
 
     
+    
     <!-- Scroll Effects Script -->
     <script>
-        // Store initial transforms
         document.querySelectorAll('.rotate-on-scroll').forEach(el => {
-            const computedStyle = window.getComputedStyle(el);
-            // We just store the baseline rotation we want, or default to -10
             el.setAttribute('data-initial-rot', el.getAttribute('data-speed') < 0 ? -10 : 10);
         });
 
         document.addEventListener('scroll', () => {
             const scrollPx = document.documentElement.scrollTop || document.body.scrollTop;
             const winHeightPx = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrollLen = scrollPx / winHeightPx;
             
             // Update Progress Bar
             const progressBar = document.getElementById('scroll-progress');
-            if(progressBar) {
-                progressBar.style.transform = `scaleX(${scrollLen})`;
+            if(progressBar && winHeightPx > 0) {
+                progressBar.style.transform = `scaleX(${scrollPx / winHeightPx})`;
             }
 
-            // Smooth Parallax Float instead of continuous rotation
+            // Simple wobble in place (no translateY that shoots it off screen)
             document.querySelectorAll('.rotate-on-scroll').forEach(el => {
                 const speed = parseFloat(el.getAttribute('data-speed')) || 0.1;
                 const initialRot = parseFloat(el.getAttribute('data-initial-rot')) || 0;
                 
-                // Move vertically based on scroll (parallax)
-                const yPos = scrollPx * speed * -2; 
-                // Slight wobble
-                const wobble = initialRot + (scrollPx * 0.02 * (speed > 0 ? 1 : -1));
-                
-                el.style.transform = `translateY(${yPos}px) rotate(${wobble}deg)`;
+                // Gentle wobble between -15 and +15 degrees around initial rotation
+                const wobble = initialRot + (Math.sin(scrollPx * 0.005) * 15 * (speed > 0 ? 1 : -1));
+                el.style.transform = `rotate(${wobble}deg)`;
             });
         });
     </script>
 </body>
+
 
 
 </html>

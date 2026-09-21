@@ -72,39 +72,44 @@
         </div>
     </div>
 
-    <!-- SECTION 1: Gen-Z Hero -->
-    <section class="relative min-h-[70vh] flex flex-col justify-center items-center overflow-hidden border-b-4 border-black bg-neo-bg dot-pattern py-20 px-6">
+    <!-- SECTION 1: Gen-Z Hero with Isometric KV -->
+    <section class="relative min-h-[85vh] flex flex-col lg:flex-row justify-center items-center overflow-hidden border-b-4 border-black bg-[#FAF9F5] py-16 px-6">
         
-        <!-- Decorative Stickers -->
-        <div class="absolute top-20 left-10 md:left-20 bg-neo-yellow border-4 border-black font-black uppercase px-4 py-2 shadow-neo z-10 text-xl hidden md:block rotate-on-scroll" data-speed="0.2">
-            BORN BEEYEE
-        </div>
-        <div class="absolute bottom-32 right-10 md:right-20 bg-neo-pink text-white border-4 border-black font-black uppercase px-6 py-3 shadow-neo z-10 text-2xl hidden md:block rotate-on-scroll" data-speed="-0.15">
-            รู้เส้น เห็นยอด !
+        <!-- Left Side: The Graphic -->
+        <div class="w-full lg:w-[60%] relative z-10 flex justify-center items-center mt-12 lg:mt-0 lg:pr-4">
+            <!-- Uploaded Image -->
+            <img src="./assets/isometric_flow.png" alt="Impact Flow" class="w-full h-auto object-contain animate-[float_6s_ease-in-out_infinite]">
         </div>
 
-        <!-- Content -->
-        <div class="max-w-4xl w-full mx-auto relative z-20 text-center">
-            <div class="inline-block bg-white border-4 border-black text-xs font-black uppercase px-4 py-2 mb-8 shadow-neo transform -rotate-2">
-                100% TRANSPARENT CROWDFUNDING
+        <!-- Right Side: The Content -->
+        <div class="w-full lg:w-[40%] relative z-20 text-center lg:text-left mt-12 lg:mt-0 flex flex-col items-center lg:items-start pl-0 lg:pl-10">
+            <div class="inline-block bg-neo-yellow border-4 border-black text-xs font-black uppercase px-4 py-2 mb-6 shadow-neo transform rotate-2">
+                BORN BEEYEE ✦ IMPACT PLATFORM
             </div>
             
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black mb-6 uppercase leading-[0.9] text-black">
-                WE DON'T JUST<br>
-                <span class="text-white text-shadow" style="-webkit-text-stroke: 3px black;">DONATE.</span><br>
-                WE BUILD.
+            <h1 class="text-6xl md:text-7xl lg:text-8xl font-black mb-6 uppercase tracking-tight leading-[0.9] text-black">
+                รู้เส้น<br><span class="text-neo-pink" style="text-shadow: 4px 4px 0px #000;">เห็นยอด</span>
             </h1>
             
-            <p class="text-base md:text-xl text-black font-semibold max-w-2xl mx-auto mb-10 bg-white border-2 border-black p-4 shadow-[4px_4px_0_0_#000]">
-                แพลตฟอร์มระดมทุนของวัยรุ่น เปลี่ยนซากความทรงจำจากค่ายเก่า ให้กลายเป็น "ของชำร่วยสุดป๊อป" เพื่อสมทบทุนสร้างค่ายใหม่ให้ปังกว่าเดิม!
+            <p class="text-base md:text-lg text-black font-semibold max-w-md mb-10 mx-auto lg:mx-0 bg-white border-2 border-black p-4 shadow-[4px_4px_0_0_#000]">
+                แพลตฟอร์มระดมทุนที่เปลี่ยน "เศษวัสดุจากโครงการเก่า" ให้เป็นทุนสร้างโปรเจกต์ใหม่ ผ่านการอัปไซเคิลของชำร่วยสุดสร้างสรรค์!
             </p>
             
             <a href="#latest-project" class="inline-flex items-center gap-3 bg-neo-cyan text-black px-8 py-5 text-xl font-black uppercase border-4 border-black shadow-neo hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-neo-hover transition-all">
                 ดูโปรเจกต์ล่าสุด 🔥
             </a>
         </div>
+        
+        <style>
+            @keyframes float {
+                0% { transform: translateY(0px); }
+                50% { transform: translateY(-15px); }
+                100% { transform: translateY(0px); }
+            }
+        </style>
     </section>
 
+    
     <!-- SECTION 2: Latest Project (Editorial Neo-Brutalist) -->
     <section id="latest-project" class="py-24 px-6 bg-neo-pink border-b-4 border-black relative overflow-hidden">
         <div class="max-w-6xl mx-auto relative z-10">
@@ -122,8 +127,13 @@
 
                 <!-- Text side -->
                 <div class="lg:w-1/2 w-full text-white">
-                    <div class="bg-black text-neo-yellow inline-block px-3 py-1 font-black uppercase text-sm border-2 border-neo-yellow mb-6">
-                        ACTIVE CAMPAIGN
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <div class="bg-black text-neo-yellow inline-block px-3 py-1 font-black uppercase text-sm border-2 border-neo-yellow">
+                            ACTIVE CAMPAIGN
+                        </div>
+                        <a href="club.html" class="bg-white text-black inline-block px-3 py-1 font-black uppercase text-sm border-2 border-black hover:bg-neo-yellow transition-colors">
+                            🏫 HOST: ROTARACT BU
+                        </a>
                     </div>
                     <h2 class="text-5xl md:text-6xl font-black uppercase leading-tight mb-6" style="-webkit-text-stroke: 2px black;">
                         แต้มสี เติมอิ่ม
@@ -236,41 +246,36 @@
 
 
     
+    
     <!-- Scroll Effects Script -->
     <script>
-        // Store initial transforms
         document.querySelectorAll('.rotate-on-scroll').forEach(el => {
-            const computedStyle = window.getComputedStyle(el);
-            // We just store the baseline rotation we want, or default to -10
             el.setAttribute('data-initial-rot', el.getAttribute('data-speed') < 0 ? -10 : 10);
         });
 
         document.addEventListener('scroll', () => {
             const scrollPx = document.documentElement.scrollTop || document.body.scrollTop;
             const winHeightPx = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrollLen = scrollPx / winHeightPx;
             
             // Update Progress Bar
             const progressBar = document.getElementById('scroll-progress');
-            if(progressBar) {
-                progressBar.style.transform = `scaleX(${scrollLen})`;
+            if(progressBar && winHeightPx > 0) {
+                progressBar.style.transform = `scaleX(${scrollPx / winHeightPx})`;
             }
 
-            // Smooth Parallax Float instead of continuous rotation
+            // Simple wobble in place (no translateY that shoots it off screen)
             document.querySelectorAll('.rotate-on-scroll').forEach(el => {
                 const speed = parseFloat(el.getAttribute('data-speed')) || 0.1;
                 const initialRot = parseFloat(el.getAttribute('data-initial-rot')) || 0;
                 
-                // Move vertically based on scroll (parallax)
-                const yPos = scrollPx * speed * -2; 
-                // Slight wobble
-                const wobble = initialRot + (scrollPx * 0.02 * (speed > 0 ? 1 : -1));
-                
-                el.style.transform = `translateY(${yPos}px) rotate(${wobble}deg)`;
+                // Gentle wobble between -15 and +15 degrees around initial rotation
+                const wobble = initialRot + (Math.sin(scrollPx * 0.005) * 15 * (speed > 0 ? 1 : -1));
+                el.style.transform = `rotate(${wobble}deg)`;
             });
         });
     </script>
 </body>
+
 
 
 </html>

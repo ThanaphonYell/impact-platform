@@ -239,41 +239,36 @@
 
 
     
+    
     <!-- Scroll Effects Script -->
     <script>
-        // Store initial transforms
         document.querySelectorAll('.rotate-on-scroll').forEach(el => {
-            const computedStyle = window.getComputedStyle(el);
-            // We just store the baseline rotation we want, or default to -10
             el.setAttribute('data-initial-rot', el.getAttribute('data-speed') < 0 ? -10 : 10);
         });
 
         document.addEventListener('scroll', () => {
             const scrollPx = document.documentElement.scrollTop || document.body.scrollTop;
             const winHeightPx = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrollLen = scrollPx / winHeightPx;
             
             // Update Progress Bar
             const progressBar = document.getElementById('scroll-progress');
-            if(progressBar) {
-                progressBar.style.transform = `scaleX(${scrollLen})`;
+            if(progressBar && winHeightPx > 0) {
+                progressBar.style.transform = `scaleX(${scrollPx / winHeightPx})`;
             }
 
-            // Smooth Parallax Float instead of continuous rotation
+            // Simple wobble in place (no translateY that shoots it off screen)
             document.querySelectorAll('.rotate-on-scroll').forEach(el => {
                 const speed = parseFloat(el.getAttribute('data-speed')) || 0.1;
                 const initialRot = parseFloat(el.getAttribute('data-initial-rot')) || 0;
                 
-                // Move vertically based on scroll (parallax)
-                const yPos = scrollPx * speed * -2; 
-                // Slight wobble
-                const wobble = initialRot + (scrollPx * 0.02 * (speed > 0 ? 1 : -1));
-                
-                el.style.transform = `translateY(${yPos}px) rotate(${wobble}deg)`;
+                // Gentle wobble between -15 and +15 degrees around initial rotation
+                const wobble = initialRot + (Math.sin(scrollPx * 0.005) * 15 * (speed > 0 ? 1 : -1));
+                el.style.transform = `rotate(${wobble}deg)`;
             });
         });
     </script>
 </body>
+
 
 
 </html>
