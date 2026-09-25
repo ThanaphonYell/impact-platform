@@ -154,14 +154,60 @@
             </div>
         </div>
 
-        <!-- Left Side: The Graphic -->
-        <div class="w-full lg:w-[60%] relative z-20 flex justify-center items-center mt-12 lg:mt-0 lg:pr-4">
-            <!-- Uploaded Image -->
-            <img src="./assets/isometric_flow.png" alt="Impact Flow" class="w-full h-auto object-contain animate-[float_6s_ease-in-out_infinite]">
+        <!-- Left Side: The Graphic (Neo-Brutalist Real Photo Collage) -->
+        <div class="w-full lg:w-[60%] relative z-30 flex justify-center items-center mt-10 lg:mt-0 lg:pr-4 py-8">
+            <div class="relative w-full max-w-[560px] h-[460px] md:h-[500px]">
+                
+                <!-- Background Layer / Card 2: รูปเศษวัสดุ (Scrap Materials) -->
+                <div class="absolute top-2 right-4 md:right-8 w-56 md:w-64 bg-white border-4 border-black shadow-neo p-2 transform rotate-6 hover:rotate-2 transition-all duration-300 z-10">
+                    <div class="relative overflow-hidden border-2 border-black aspect-[4/3] bg-neo-pink/10">
+                        <img src="./assets/old_project.png" alt="เศษวัสดุโครงการเก่า" class="w-full h-full object-cover">
+                        <div class="absolute bottom-1 right-1 bg-neo-pink text-white text-[10px] font-black px-2 py-0.5 border border-black uppercase tracking-wider">
+                            RAW SCRAP
+                        </div>
+                    </div>
+                    <p class="font-black text-xs text-black mt-1.5 uppercase tracking-wide text-center">
+                        ✦ เศษวัสดุเหลือใช้
+                    </p>
+                </div>
+
+                <!-- Main Center Layer / Card 1: รูปเด็กนักเรียนและชุมชน (Students & Community) -->
+                <div class="absolute top-10 left-2 md:left-6 w-64 md:w-72 bg-white border-4 border-black shadow-neo-lg p-2.5 pb-4 transform -rotate-3 hover:rotate-0 transition-all duration-300 z-20">
+                    <!-- Washi Tape Decor -->
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-neo-yellow/90 border border-black transform -rotate-2 z-30 shadow-[1px_1px_0px_#000]"></div>
+                    
+                    <div class="relative overflow-hidden border-2 border-black aspect-square bg-[#FAF9F5]">
+                        <img src="./assets/new_room_project_new.jpg" alt="นักเรียนและห้องเรียนใหม่" class="w-full h-full object-cover">
+                        <div class="absolute top-2 left-2 bg-neo-cyan text-black text-[10px] font-black px-2 py-0.5 border border-black uppercase tracking-wider">
+                            IMPACT ✦ 100%
+                        </div>
+                    </div>
+                    <div class="mt-2 flex items-center justify-between px-1">
+                        <span class="font-black text-xs md:text-sm text-black uppercase">✦ นักเรียน & รอยยิ้ม</span>
+                        <span class="bg-black text-white text-[9px] font-black px-1.5 py-0.5 rounded">NEW LIFE</span>
+                    </div>
+                </div>
+
+                <!-- Foreground Accent / Card 3: รูปของชำร่วยอัปไซเคิล (Upcycled Souvenir) -->
+                <div class="absolute bottom-4 right-4 md:right-12 w-52 md:w-60 bg-[#FFE800] border-4 border-black shadow-neo-lg p-2 transform rotate-3 hover:rotate-6 transition-all duration-300 z-30">
+                    <div class="relative overflow-hidden border-2 border-black aspect-square bg-white">
+                        <img src="./assets/product3.jpg" alt="ของชำร่วยอัปไซเคิล" class="w-full h-full object-cover">
+                    </div>
+                    <div class="mt-2 text-center bg-black text-neo-yellow text-xs font-black py-1 uppercase tracking-wider border border-black">
+                        ✦ ของชำร่วยระดมทุน ✦
+                    </div>
+                </div>
+
+                <!-- Floating Neo-Brutalist Sticker Badge -->
+                <div class="absolute -bottom-3 left-14 md:left-24 bg-neo-pink text-white border-4 border-black rounded-full w-20 h-20 md:w-22 md:h-22 flex items-center justify-center text-center font-black text-xs uppercase shadow-neo transform -rotate-12 z-40 animate-pulse">
+                    TRASH<br>➔ GOLD
+                </div>
+
+            </div>
         </div>
 
         <!-- Right Side: The Content -->
-        <div class="w-full lg:w-[40%] relative z-30 text-center lg:text-left mt-12 lg:mt-0 flex flex-col items-center lg:items-start pl-0 lg:pl-10">
+        <div class="w-full lg:w-[40%] relative z-40 text-center lg:text-left mt-12 lg:mt-0 flex flex-col items-center lg:items-start pl-0 lg:pl-10">
             <div class="inline-block bg-neo-yellow border-4 border-black text-xs font-black uppercase px-4 py-2 mb-6 shadow-neo transform rotate-2">
                 BORN BEEYEE ✦ IMPACT PLATFORM
             </div>
@@ -214,7 +260,7 @@
             <div class="w-2 h-40 bg-black absolute -bottom-40 left-1/2 -translate-x-1/2 -z-10"></div>
         </div>
 
-        <div class="max-w-6xl mx-auto relative z-10">
+        <div class="max-w-6xl mx-auto relative z-30">
             <div class="flex flex-col lg:flex-row gap-12 items-center">
                 
                 <!-- Image side -->
@@ -412,12 +458,12 @@
             // Dynamic path generation: Elegant flowing ribbon (S-Curve & Natural Wrap)
             // 1. Enters smoothly from top-left under marquee
             let d = `M ${w * 0.08} 140 `;
-            // 2. Sweeps across the top of the graphic, dipping behind top roof
-            d += `C ${w * 0.22} 140, ${cX - 40} ${cY - 140}, ${cX + 40} ${cY - 120} `;
-            // 3. Curves gracefully down the right side of the graphic (between graphic & text)
-            d += `C ${cX + 180} ${cY - 100}, ${cX + 180} ${cY + 100}, ${cX + 40} ${cY + 160} `;
-            // 4. Sweeps in front of the lower lawn and swoops down towards the torn paper
-            d += `C ${cX - 80} ${cY + 220}, ${w * 0.35} ${h1 - 40}, ${w * 0.65} ${h1 + 30} `;
+            // 2. Sweeps across behind the top of the photo collage
+            d += `C ${w * 0.22} 140, ${cX - 40} ${cY - 150}, ${cX + 60} ${cY - 130} `;
+            // 3. Curves gracefully down the right side of the photos (in the gap between photos & title)
+            d += `C ${cX + 220} ${cY - 90}, ${cX + 220} ${cY + 120}, ${cX + 60} ${cY + 190} `;
+            // 4. Sweeps smoothly beneath the photo collage and down towards the torn paper
+            d += `C ${cX - 60} ${cY + 250}, ${w * 0.38} ${h1 - 40}, ${w * 0.65} ${h1 + 30} `;
             // 5. Enters Section 2 across the pink torn paper, weaving over photo card
             d += `C ${w * 0.82} ${sec2Top + 60}, ${w * 0.84} ${sec2Top + sec2H * 0.4}, ${w * 0.72} ${sec2Top + sec2H * 0.75} `;
             // 6. Sweeps through bottom torn paper into Section 3

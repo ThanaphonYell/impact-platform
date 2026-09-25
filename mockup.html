@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMPACT PLATFORM - Exact Image 1 Design Mockup</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neo-yellow': '#D4FF00', // Neon Lime-Yellow from Image 1
+                        'neo-pink': '#FF3366',
+                        'neo-cyan': '#00E5FF',
+                        'neo-bg': '#F7F5EE',
+                    },
+                    boxShadow: {
+                        'neo': '5px 5px 0px 0px rgba(0,0,0,1)',
+                        'neo-hover': '2px 2px 0px 0px rgba(0,0,0,1)',
+                        'neo-lg': '8px 8px 0px 0px rgba(0,0,0,1)',
+                        'neo-xl': '12px 12px 0px 0px rgba(0,0,0,1)',
+                    },
+                    fontFamily: {
+                        'sans': ['Prompt', 'sans-serif'],
+                        'display': ['Bebas Neue', 'Prompt', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #F7F5EE; color: #000; overflow-x: hidden; }
+        
+        /* 3D Ribbon Ribbon Fold Effect */
+        .ribbon-fold-top {
+            clip-path: polygon(0% 0%, 100% 15%, 85% 100%, 0% 85%);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-neo-pink selection:text-white relative">
+
+    <!-- Scroll Progress Bar -->
+    <div class="fixed top-0 left-0 w-full h-3 bg-neo-pink z-[100] origin-left scale-x-0" id="scroll-progress" style="box-shadow: 0px 4px 0px black; border-bottom: 2px solid black;"></div>
+
+    <!-- Global Scroll Journey Line Overlay (Continuing from Hero Ribbon Tail down Section 2 & 3!) -->
+    <svg id="scroll-line-svg" class="absolute top-0 left-0 w-full pointer-events-none z-[45] overflow-visible">
+        <defs>
+            <mask id="line-mask">
+                <path id="mask-path" fill="none" stroke="white" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"></path>
+            </mask>
+        </defs>
+        
+        <!-- Shadow -->
+        <path id="shadow-path" fill="none" stroke="#000000" stroke-width="36" stroke-linecap="round" stroke-linejoin="round" mask="url(#line-mask)" class="translate-x-[5px] translate-y-[5px]"></path>
+        
+        <!-- Border -->
+        <path id="border-path" fill="none" stroke="#000000" stroke-width="36" stroke-linecap="round" stroke-linejoin="round" mask="url(#line-mask)"></path>
+
+        <!-- Main Ribbon Fill -->
+        <path id="main-path" fill="none" stroke="#D4FF00" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" mask="url(#line-mask)"></path>
+
+        <!-- Text on Ribbon -->
+        <text font-family="Prompt" font-weight="900" font-size="12" fill="#000000" letter-spacing="3" mask="url(#line-mask)">
+             <textPath href="#main-path" startOffset="0%">
+                 ✦ IMPACT JOURNEY ✦ FROM TRASH TO TREASURE ✦ MAKE IT HAPPEN ✦ REBUILD THE FUTURE ✦ IMPACT JOURNEY ✦ FROM TRASH TO TREASURE ✦ MAKE IT HAPPEN ✦ REBUILD THE FUTURE ✦ IMPACT JOURNEY ✦ FROM TRASH TO TREASURE ✦ MAKE IT HAPPEN ✦ REBUILD THE FUTURE ✦ IMPACT JOURNEY ✦ FROM TRASH TO TREASURE ✦ MAKE IT HAPPEN ✦ REBUILD THE FUTURE ✦ IMPACT JOURNEY ✦ FROM TRASH TO TREASURE ✦ MAKE IT HAPPEN ✦ REBUILD THE FUTURE ✦
+             </textPath>
+        </text>
+    </svg>
+
+    <!-- Navigation (Matching Image 1 Header) -->
+    <nav class="w-full z-50 bg-[#F7F5EE] border-b-4 border-black">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-5">
+            <div class="text-2xl font-black tracking-widest uppercase">
+                IMPACT<span class="text-neo-pink">.</span>
+            </div>
+            
+            <div class="hidden md:flex gap-8 text-sm font-black uppercase tracking-wider">
+                <a href="#hero" class="hover:text-neo-pink transition-colors">WORKSHOPS</a>
+                <a href="#latest-project" class="hover:text-neo-pink transition-colors">STORIES</a>
+                <a href="#squads" class="hover:text-neo-pink transition-colors">ABOUT</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <span class="text-xs font-black tracking-widest uppercase bg-neo-yellow border-2 border-black px-4 py-2 shadow-neo">
+                    LIVE MOCKUP
+                </span>
+                <a href="index.html" class="text-xs font-black tracking-widest uppercase bg-white border-2 border-black px-4 py-2 shadow-neo hover:bg-neo-cyan transition-colors">
+                    HOME
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: Exact Image 1 Hero (Photo Collage + 3D Ribbon Wrap) -->
+    <section id="hero" class="relative min-h-[90vh] flex flex-col lg:flex-row justify-center items-center overflow-visible bg-[#F7F5EE] pt-12 pb-24 px-6 md:px-12">
+        
+        <!-- Left Side: Scrapbook Photo Collage with Real Wrapped Ribbon -->
+        <div class="w-full lg:w-[58%] relative flex justify-center items-center py-8">
+            
+            <div class="relative w-full max-w-[560px] h-[520px]">
+                
+                <!-- 1. RIBBON UPPER LOOP (Back Layer: Z-5, loops behind the top photo) -->
+                <div class="absolute -top-4 -left-6 w-36 h-48 pointer-events-none z-0">
+                    <svg viewBox="0 0 140 190" fill="none" class="w-full h-full overflow-visible">
+                        <!-- Upper Loop curling from left behind the photo -->
+                        <path d="M 0 140 C 20 80, 60 20, 110 30 C 140 36, 145 70, 135 110 L 95 105 C 105 80, 95 65, 80 62 C 50 56, 25 100, 10 150 Z" 
+                              fill="#9EB800" stroke="#000000" stroke-width="4" stroke-linejoin="round" />
+                        <path d="M 10 150 C 25 100, 50 56, 80 62 C 95 65, 105 80, 95 105 L 135 110 C 145 70, 140 36, 110 30 C 60 20, 20 80, 0 140 Z" 
+                              fill="#B5D900" stroke="#000000" stroke-width="4" />
+                    </svg>
+                </div>
+
+                <!-- 2. PHOTO 1: Top Main Polaroid (Students / Workshop) -> Z-10 -->
+                <div class="absolute top-2 left-6 w-[320px] md:w-[350px] bg-white p-4 pb-8 border-4 border-black shadow-neo-lg transform -rotate-2 hover:rotate-0 transition-transform duration-300 z-10">
+                    <div class="relative overflow-hidden border-2 border-black bg-gray-100 aspect-[4/3]">
+                        <img src="./assets/new_room_project_new.jpg" alt="Workshop Kids" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- 3. RIBBON TOP-RIGHT LOOP (Behind Photo 1 & 3, curving back over) -> Z-5 -->
+                <div class="absolute -top-6 right-8 w-44 h-40 pointer-events-none z-0">
+                    <svg viewBox="0 0 180 160" fill="none" class="w-full h-full overflow-visible">
+                        <!-- Smooth ribbon fold looping at top right -->
+                        <path d="M 20 120 C 30 60, 70 10, 130 15 C 170 18, 180 60, 150 110 L 115 95 C 130 65, 125 45, 105 44 C 70 41, 40 75, 30 125 Z" 
+                              fill="#A6C400" stroke="#000000" stroke-width="4" stroke-linejoin="round" />
+                        <!-- Inside shadow / fold -->
+                        <path d="M 130 15 C 170 18, 180 60, 150 110 L 115 95 C 130 65, 125 45, 105 44 Z" 
+                              fill="#7E9400" stroke="#000000" stroke-width="4" />
+                    </svg>
+                </div>
+
+                <!-- 4. PHOTO 3: Middle-Right Polaroid (Materials / Crafting hands) -> Z-10 -->
+                <div class="absolute top-16 right-0 w-[240px] md:w-[260px] bg-white p-3 pb-6 border-4 border-black shadow-neo transform rotate-6 hover:rotate-0 transition-transform duration-300 z-10">
+                    <div class="relative overflow-hidden border-2 border-black aspect-square">
+                        <img src="./assets/product1.jpg" alt="Craft Materials" class="w-full h-full object-cover">
+                    </div>
+                    <div class="mt-2 text-xs font-black uppercase text-center text-gray-800">
+                        ✦ CREATIVE UP-CYCLE ✦
+                    </div>
+                </div>
+
+                <!-- 5. MAIN 3D RIBBON BANNER (Crossing diagonally IN FRONT of Photo 1!) -> Z-20 -->
+                <div class="absolute top-44 -left-6 md:-left-8 w-[520px] md:w-[580px] pointer-events-none z-20 transform -rotate-12">
+                    
+                    <!-- The Chunky Neon Banner -->
+                    <div class="relative bg-neo-yellow border-4 border-black p-3 md:py-4 px-6 shadow-neo-xl flex flex-col justify-center">
+                        <div class="flex items-center justify-between text-base md:text-xl font-black uppercase text-black tracking-wider">
+                            <span>✦ IMPACT JOURNEY ✦</span>
+                            <span class="text-xs bg-black text-neo-yellow px-2 py-0.5 border border-black">EST. 2026</span>
+                        </div>
+                        <div class="text-2xl md:text-3xl lg:text-4xl font-black uppercase text-black tracking-tight leading-none mt-1">
+                            FROM TRASH TO TREASURE
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 6. PHOTO 2: Bottom-Left Polaroid (Kids holding upcycled bags) -> Z-25 -->
+                <div class="absolute bottom-0 left-8 w-[280px] md:w-[310px] bg-white p-4 pb-7 border-4 border-black shadow-neo-lg transform -rotate-3 hover:rotate-0 transition-transform duration-300 z-25">
+                    <div class="relative overflow-hidden border-2 border-black bg-gray-100 aspect-[4/3]">
+                        <img src="./assets/old_room_project40.jpg" alt="Impact Mission" class="w-full h-full object-cover">
+                    </div>
+                    <div class="mt-2 flex justify-between items-center text-xs font-black uppercase">
+                        <span>CAMP 40 ➔ NEW ROOM</span>
+                        <span class="bg-black text-white px-2 py-0.5 text-[10px]">ROTARACT</span>
+                    </div>
+                </div>
+
+                <!-- 7. RIBBON BOTTOM TAIL (Looping from under Photo 2 and exiting down!) -> Z-30 -->
+                <div id="ribbon-tail-origin" class="absolute -bottom-10 right-14 w-48 h-40 pointer-events-none z-30">
+                    <svg viewBox="0 0 180 150" fill="none" class="w-full h-full overflow-visible">
+                        <!-- Ribbon curling out and heading down into the torn paper -->
+                        <path d="M 10 10 C 30 40, 60 70, 90 60 C 130 45, 150 10, 160 50 C 170 90, 130 130, 90 150 L 65 125 C 95 110, 120 80, 115 55 C 110 35, 90 45, 70 55 C 45 65, 20 40, 0 10 Z" 
+                              fill="#D4FF00" stroke="#000000" stroke-width="4" stroke-linejoin="round" />
+                    </svg>
+                </div>
+
+                <!-- 8. AUTHENTIC SCRAPBOOK STICKERS (Exactly like Image 1!) -> Z-40 -->
+                
+                <!-- Top-Left: Pink Sparkle Star -->
+                <div class="absolute -top-6 left-2 bg-neo-pink text-white w-12 h-12 flex items-center justify-center font-black text-2xl border-2 border-black shadow-neo rotate-12 z-40">
+                    ✦
+                </div>
+
+                <!-- Creative Badge -->
+                <div class="absolute top-14 -left-6 bg-neo-pink text-white border-2 border-black px-3 py-1 font-black text-xs uppercase shadow-neo rotate-[-15deg] z-40">
+                    CREATIVE
+                </div>
+
+                <!-- Top Smiley Sticker -->
+                <div class="absolute -top-3 left-48 bg-neo-yellow border-3 border-black rounded-full w-14 h-14 flex items-center justify-center font-black text-2xl shadow-neo rotate-6 z-40">
+                    😊
+                </div>
+
+                <!-- Save the Planet Badge -->
+                <div class="absolute top-10 left-52 bg-neo-cyan border-2 border-black rounded-full w-14 h-14 flex flex-col items-center justify-center text-[9px] font-black uppercase text-center leading-none shadow-neo -rotate-6 z-40">
+                    <span>SAVE</span>
+                    <span>PLANET</span>
+                </div>
+
+                <!-- Middle Paperclip -->
+                <div class="absolute top-36 right-8 text-3xl font-black rotate-45 select-none pointer-events-none z-40">
+                    📎
+                </div>
+
+                <!-- Do It Yourself Round Badge -->
+                <div class="absolute bottom-36 right-4 bg-purple-400 text-white border-3 border-black rounded-full w-16 h-16 flex flex-col items-center justify-center text-[10px] font-black uppercase text-center leading-none shadow-neo rotate-12 z-40">
+                    <span>DO IT</span>
+                    <span>YOURSELF</span>
+                </div>
+
+                <!-- Bottom Safety Pin & Smiley -->
+                <div class="absolute -bottom-4 -left-4 text-3xl font-black -rotate-45 select-none z-40">
+                    🧷
+                </div>
+                <div class="absolute bottom-8 -left-2 bg-neo-yellow border-2 border-black rounded-full w-10 h-10 flex items-center justify-center text-lg shadow-neo rotate-[-10deg] z-40">
+                    ⭐
+                </div>
+
+                <!-- Eco-Warrior Pill Badge -->
+                <div class="absolute bottom-12 right-24 bg-green-400 text-black border-2 border-black px-3 py-1 rounded-full font-black text-xs uppercase shadow-neo rotate-[-8deg] z-40">
+                    ECO-WARRIOR
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Right Side: Exact Image 1 Typography & Road Signs -->
+        <div class="w-full lg:w-[42%] relative z-30 text-center lg:text-left mt-12 lg:mt-0 flex flex-col items-center lg:items-start pl-0 lg:pl-8">
+            
+            <!-- Headline matching Image 1: "รู้เส้น เห็นยอด" with bold black neo-brutalist shadow -->
+            <h1 class="text-7xl md:text-8xl lg:text-9xl font-black mb-6 uppercase tracking-tight leading-[0.88] text-black">
+                รู้เส้น<br>
+                <span class="text-black" style="text-shadow: 6px 6px 0px #00E5FF, 10px 10px 0px #000;">เห็นยอด</span>
+            </h1>
+            
+            <p class="text-base md:text-lg text-black font-bold max-w-md mb-8 mx-auto lg:mx-0 bg-white border-3 border-black p-4 shadow-neo">
+                แพลตฟอร์มระดมทุนที่เปลี่ยน "เศษวัสดุจากโครงการเก่า" ให้เป็นทุนสร้างโปรเจกต์ใหม่ ผ่านการอัปไซเคิลของชำร่วยสุดสร้างสรรค์!
+            </p>
+            
+            <!-- CTA Button matching Image 1: "JOIN THE JOURNEY NOW ➔" -->
+            <div class="flex flex-col sm:flex-row items-center gap-4 w-full justify-center lg:justify-start">
+                <a href="#latest-project" class="inline-flex items-center gap-3 bg-neo-cyan text-black px-8 py-5 text-xl font-black uppercase border-4 border-black shadow-neo-lg hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-neo transition-all">
+                    JOIN THE JOURNEY NOW ➔
+                </a>
+            </div>
+
+            <!-- Road Sign Badges matching Image 1 -->
+            <div class="flex items-center gap-4 mt-8">
+                <!-- Green FUTURE ➔ sign -->
+                <div class="bg-green-400 text-black border-3 border-black px-4 py-2 font-black text-sm uppercase shadow-neo rotate-2">
+                    FUTURE ➔
+                </div>
+
+                <!-- Red/White DO NOT STOP sign -->
+                <div class="bg-white border-3 border-black rounded-full w-16 h-16 flex items-center justify-center p-1 shadow-neo -rotate-3">
+                    <div class="w-full h-full rounded-full border-2 border-red-600 flex flex-col items-center justify-center leading-none text-red-600 font-black text-[9px] uppercase">
+                        <span>DO NOT</span>
+                        <span class="text-xs">STOP</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TORN PINK PAPER DIVIDER (Exactly matching Image 1 bottom edge!) -->
+    <div class="w-full overflow-hidden leading-none relative z-30 -mt-6" style="filter: drop-shadow(0px -4px 6px rgba(0,0,0,0.18));">
+        <svg viewBox="0 0 1440 70" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-[54px] md:h-[72px] block" preserveAspectRatio="none">
+            <path d="M 0,70 L 0,46.1 L 0,46.1 L 10,49.7 L 20,48.5 L 30,48.8 L 40,47.4 L 50,44.8 L 60,43.1 L 70,46.1 L 80,46 L 90,46.4 L 100,45.1 L 110,42.2 L 120,42.4 L 130,43.2 L 140,44.1 L 150,43.6 L 160,45.7 L 170,41.1 L 180,44.1 L 190,41.7 L 200,42.6 L 210,41.4 L 220,41.6 L 230,40.8 L 240,42.2 L 250,42 L 260,39.3 L 270,38.8 L 280,36.7 L 290,39.1 L 300,37.7 L 310,36 L 320,38.8 L 330,38.7 L 340,37.9 L 350,36.8 L 360,34.5 L 370,36.7 L 380,35.6 L 390,32.3 L 400,29.1 L 410,32.4 L 420,29.5 L 430,32.7 L 440,29.6 L 450,30 L 460,28.5 L 470,29.2 L 480,29.6 L 490,31.1 L 500,27.8 L 510,31.6 L 520,29.2 L 530,28.3 L 540,28.3 L 550,29.1 L 560,29.8 L 570,25 L 580,28.5 L 590,31 L 600,28.2 L 610,27.9 L 620,27.5 L 630,31.2 L 640,28.5 L 650,30.9 L 660,32.3 L 670,30.4 L 680,34 L 690,32.7 L 700,35.2 L 710,34.9 L 720,33.2 L 730,34.2 L 740,34.3 L 750,34.1 L 760,32.9 L 770,38.3 L 780,34.6 L 790,36.6 L 800,23.1 L 810,25.2 L 820,25 L 830,22.7 L 840,21.3 L 850,19.2 L 860,18.6 L 870,15.5 L 880,13.2 L 890,14.3 L 900,11.5 L 910,10.4 L 920,12.3 L 930,11.2 L 940,11.8 L 950,11.9 L 960,10.6 L 970,9.7 L 980,11.2 L 990,10 L 1000,12.4 L 1010,8.5 L 1020,13.2 L 1030,13 L 1040,12.2 L 1050,11 L 1060,15.8 L 1070,14.1 L 1080,16.4 L 1090,17.6 L 1100,20 L 1110,23.1 L 1120,23.2 L 1130,22.7 L 1140,23.3 L 1150,18.3 L 1160,18.4 L 1170,22.6 L 1180,19 L 1190,23.1 L 1200,22.1 L 1210,23.8 L 1220,21.7 L 1230,23.8 L 1240,24.4 L 1250,27.1 L 1260,27.1 L 1270,28.1 L 1280,27.9 L 1290,28.6 L 1300,30.4 L 1310,28.6 L 1320,33.7 L 1330,34.2 L 1340,29.9 L 1350,34.5 L 1360,34.9 L 1370,37.4 L 1380,37.5 L 1390,36.2 L 1400,38.1 L 1410,38 L 1420,39.1 L 1430,38.5 L 1440,43.4 L 1440,70 Z" fill="#FF3366" stroke="rgba(255,255,255,0.4)" stroke-width="1"></path>
+        </svg>
+    </div>
+
+    <!-- SECTION 2: Latest Project (Editorial Neo-Brutalist) -->
+    <section id="latest-project" class="py-24 px-6 bg-neo-pink relative">
+        <div class="max-w-6xl mx-auto relative z-20">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                
+                <!-- Image side -->
+                <div class="lg:w-1/2 w-full relative z-20">
+                    <div class="bg-white border-4 border-black shadow-neo-lg p-3 rotate-[-2deg] relative z-10 hover:rotate-0 transition-transform duration-300">
+                        <img src="./assets/new_room_project_new.jpg" class="w-full h-auto border-2 border-black object-cover grayscale hover:grayscale-0 transition-all duration-500 aspect-square">
+                        <div class="absolute -top-5 -right-5 bg-neo-yellow border-4 border-black rounded-full w-24 h-24 flex items-center justify-center font-black text-center leading-none text-xl shadow-neo animate-pulse z-30">
+                            HOT<br>DROP!
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text side -->
+                <div class="lg:w-1/2 w-full text-white relative z-30">
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <div class="bg-black text-neo-yellow inline-block px-3 py-1 font-black uppercase text-sm border-2 border-neo-yellow">
+                            ACTIVE CAMPAIGN
+                        </div>
+                        <a href="club.html" class="bg-white text-black inline-block px-3 py-1 font-black uppercase text-sm border-2 border-black hover:bg-neo-yellow transition-colors">
+                            🏫 HOST: ROTARACT BU
+                        </a>
+                    </div>
+                    <h2 class="text-5xl md:text-6xl font-black uppercase leading-tight mb-6" style="-webkit-text-stroke: 2px black;">
+                        แต้มสี เติมอิ่ม
+                    </h2>
+                    <div class="bg-white text-black border-4 border-black p-6 shadow-neo mb-8 transform rotate-[1deg]">
+                        <p class="font-bold text-lg mb-4">
+                            จากเศษวัสดุค่าย 40 ➔ กลายเป็นโรงอาหารใหม่!
+                        </p>
+                        <p class="text-sm font-medium text-gray-700 mb-6">
+                            โรงเรียนบ้านน้ำตาก จ.เพชรบูรณ์ กำลังรอโรงอาหารใหม่ เราเอาเศษของจากค่ายเก่ามาทำของชำร่วยสุดเฟี้ยวให้ทุกคนได้สะสม
+                        </p>
+                        
+                        <!-- Progress Bar -->
+                        <div class="mb-2 flex justify-between font-black uppercase text-xs">
+                            <span>MISSION PROGRESS</span>
+                            <span class="text-neo-pink">เหลืออีก 45 ชิ้น!</span>
+                        </div>
+                        <div class="w-full bg-gray-200 border-2 border-black h-6 p-0.5">
+                            <div class="bg-neo-pink h-full w-[77%] relative border-r-2 border-black"></div>
+                        </div>
+                    </div>
+
+                    <a href="project.html" class="inline-block bg-neo-yellow text-black border-4 border-black px-8 py-4 font-black uppercase text-lg shadow-[6px_6px_0_0_#fff] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_#fff] transition-all">
+                        Support Project →
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bottom Torn Paper Edge (Ripping into Section 3) -->
+        <div class="absolute -bottom-[48px] md:-bottom-[66px] left-0 w-full overflow-hidden leading-none z-20 pointer-events-none" style="filter: drop-shadow(0px 6px 8px rgba(0,0,0,0.22));">
+            <svg viewBox="0 0 1440 70" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-[50px] md:h-[68px] block" preserveAspectRatio="none">
+                <path d="M 0,0 L 0,20.3 L 0,20.3 L 10,20.5 L 20,26 L 30,25.5 L 40,26 L 50,27.7 L 60,25.4 L 70,25.3 L 80,28.6 L 90,28.8 L 100,32 L 110,29.9 L 120,30.9 L 130,36.3 L 140,33.1 L 150,32 L 160,35.2 L 170,33.9 L 180,35.2 L 190,36 L 200,35.5 L 210,35.1 L 220,35.9 L 230,36.2 L 240,36.4 L 250,40 L 260,34.7 L 270,38.8 L 280,37.4 L 290,37.1 L 300,39.6 L 310,33.4 L 320,35 L 330,37.3 L 340,31.4 L 350,35.5 L 360,33.1 L 370,33.8 L 380,32.1 L 390,31.8 L 400,32.1 L 410,30.1 L 420,27.1 L 430,30.8 L 440,26 L 450,24.5 L 460,24.3 L 470,23.6 L 480,22.4 L 490,23 L 500,33.5 L 510,30 L 520,30.9 L 530,31.3 L 540,31.2 L 550,29.3 L 560,29.5 L 570,29.2 L 580,26 L 590,23.6 L 600,28.3 L 610,24.3 L 620,25.7 L 630,24.8 L 640,25.7 L 650,22.5 L 660,23.2 L 670,24.2 L 680,23.3 L 690,20.2 L 700,23.6 L 710,22 L 720,24.9 L 730,21.5 L 740,21.6 L 750,22.6 L 760,19.2 L 770,20.3 L 780,22.2 L 790,21.8 L 800,25.9 L 810,22.4 L 820,22.1 L 830,24.3 L 840,23.1 L 850,24.3 L 860,22.5 L 870,26.8 L 880,26.4 L 890,25.9 L 900,27.9 L 910,25.9 L 920,25.1 L 930,26.1 L 940,30 L 950,29.6 L 960,28.7 L 970,28.7 L 980,31.3 L 990,31.1 L 1000,24.2 L 1010,26.3 L 1020,27.1 L 1030,30.1 L 1040,28.4 L 1050,29.6 L 1060,32.4 L 1070,32.7 L 1080,34.3 L 1090,31.4 L 1100,35.1 L 1110,37.2 L 1120,34 L 1130,35 L 1140,37.9 L 1150,38.7 L 1160,37 L 1170,38.1 L 1180,41.2 L 1190,37.5 L 1200,39.9 L 1210,38.3 L 1220,37.2 L 1230,38.2 L 1240,37.9 L 1250,37.1 L 1260,41.1 L 1270,38.7 L 1280,38.7 L 1290,37.4 L 1300,36.2 L 1310,39.3 L 1320,33.6 L 1330,34.6 L 1340,32.3 L 1350,32.6 L 1360,33.6 L 1370,31.6 L 1380,30.3 L 1390,29.8 L 1400,27.3 L 1410,26.8 L 1420,26.8 L 1430,26.5 L 1440,26.8 L 1440,0 Z" fill="#FF3366" stroke="rgba(255,255,255,0.4)" stroke-width="1"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Clubs / Squads -->
+    <section id="squads" class="py-28 px-6 bg-white relative">
+        <div class="max-w-7xl mx-auto relative z-20">
+            
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <h2 class="text-5xl md:text-7xl font-black text-black uppercase tracking-tight" style="-webkit-text-stroke: 2px black; color: transparent;">
+                        THE SQUADS
+                    </h2>
+                    <p class="text-xl font-bold bg-neo-cyan inline-block px-4 py-1 border-2 border-black shadow-[4px_4px_0_0_#000] mt-4 transform -rotate-1">
+                        ชมรมที่กำลังขับเคลื่อนสังคม
+                    </p>
+                </div>
+            </div>
+
+            <!-- Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <!-- Club 1 -->
+                <a href="club.html" class="block bg-white border-4 border-black p-4 shadow-neo hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-neo-hover transition-all group relative z-10">
+                    <div class="absolute -top-4 -left-4 bg-neo-pink text-white font-black text-xs px-3 py-1 border-2 border-black rotate-[-10deg] z-10 shadow-[2px_2px_0_0_#000]">
+                        40+ PROJECTS!
+                    </div>
+                    <div class="border-2 border-black overflow-hidden mb-4 relative aspect-[4/3] bg-neo-yellow">
+                        <img src="./assets/project1.png" class="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:scale-110 group-hover:mix-blend-normal group-hover:opacity-100 transition-all duration-300">
+                    </div>
+                    <h3 class="text-3xl font-black uppercase mb-2">Rotaract BU</h3>
+                    <p class="font-bold text-sm text-gray-600 mb-6">สร้างโรงเรียนและพัฒนาชุมชน</p>
+                    <div class="border-t-4 border-black pt-4 flex justify-between items-center font-black uppercase text-xs">
+                        <span>ดูเส้นทาง ➔</span>
+                        <span class="bg-black text-white px-2 py-1">EDUCATION</span>
+                    </div>
+                </a>
+
+                <!-- Club 2 -->
+                <a href="#" class="block bg-white border-4 border-black p-4 shadow-neo hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-neo-hover transition-all group relative z-10">
+                    <div class="border-2 border-black overflow-hidden mb-4 relative aspect-[4/3] bg-neo-cyan">
+                        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:scale-110 group-hover:mix-blend-normal group-hover:opacity-100 transition-all duration-300">
+                    </div>
+                    <h3 class="text-3xl font-black uppercase mb-2">Green Earth</h3>
+                    <p class="font-bold text-sm text-gray-600 mb-6">ฟื้นฟูป่าและจัดการขยะ</p>
+                    <div class="border-t-4 border-black pt-4 flex justify-between items-center font-black uppercase text-xs">
+                        <span>ดูเส้นทาง ➔</span>
+                        <span class="bg-black text-white px-2 py-1">NATURE</span>
+                    </div>
+                </a>
+
+                <!-- Club 3 -->
+                <a href="#" class="block bg-white border-4 border-black p-4 shadow-neo hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-neo-hover transition-all group relative z-10">
+                    <div class="border-2 border-black overflow-hidden mb-4 relative aspect-[4/3] bg-neo-yellow">
+                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:scale-110 group-hover:mix-blend-normal group-hover:opacity-100 transition-all duration-300">
+                    </div>
+                    <h3 class="text-3xl font-black uppercase mb-2">Tech 4 Good</h3>
+                    <p class="font-bold text-sm text-gray-600 mb-6">เทคโนโลยีเพื่อสังคม</p>
+                    <div class="border-t-4 border-black pt-4 flex justify-between items-center font-black uppercase text-xs">
+                        <span>ดูเส้นทาง ➔</span>
+                        <span class="bg-black text-white px-2 py-1">INNOVATION</span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center font-black uppercase tracking-widest text-sm">
+            <div class="mb-4 md:mb-0">
+                IMPACT PLATFORM © 2026
+            </div>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-neo-pink transition-colors">INSTAGRAM</a>
+                <a href="#" class="hover:text-neo-cyan transition-colors">FACEBOOK</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Progress & Journey Line Script -->
+    <script>
+        function setupScrollLine() {
+            const svg = document.getElementById('scroll-line-svg');
+            const maskPath = document.getElementById('mask-path');
+            const mainPath = document.getElementById('main-path');
+            const borderPath = document.getElementById('border-path');
+            const shadowPath = document.getElementById('shadow-path');
+            
+            if (!svg || !maskPath) return;
+
+            const w = document.documentElement.scrollWidth;
+            const h = document.documentElement.scrollHeight;
+            
+            svg.style.width = `${w}px`;
+            svg.style.height = `${h}px`;
+            
+            const hero = document.getElementById('hero');
+            const h1 = hero ? hero.offsetHeight : 800;
+            
+            const sec2 = document.getElementById('latest-project');
+            const sec2Top = sec2 ? sec2.offsetTop : h1;
+            const sec2H = sec2 ? sec2.offsetHeight : 600;
+            
+            const sec3 = document.getElementById('squads');
+            const sec3Top = sec3 ? sec3.offsetTop : (sec2Top + sec2H);
+
+            // Connects directly from the Hero Collage Ribbon Tail!
+            const tail = document.getElementById('ribbon-tail-origin');
+            const startX = tail ? (tail.getBoundingClientRect().left + window.scrollX + tail.offsetWidth * 0.45) : (w * 0.42);
+            const startY = tail ? (tail.getBoundingClientRect().top + window.scrollY + tail.offsetHeight * 0.8) : (h1 - 20);
+
+            // Flowing highway line down through Section 2 and Section 3
+            let d = `M ${startX} ${startY} `;
+            // Dives through pink torn paper into Section 2
+            d += `C ${startX + 20} ${startY + 60}, ${w * 0.86} ${sec2Top + 80}, ${w * 0.82} ${sec2Top + sec2H * 0.4} `;
+            // Curves past the project card in Section 2
+            d += `C ${w * 0.78} ${sec2Top + sec2H * 0.7}, ${w * 0.45} ${sec2Top + sec2H * 0.85}, ${w * 0.32} ${sec2Top + sec2H + 20} `;
+            // Enters Section 3 through bottom torn paper
+            d += `C ${w * 0.18} ${sec3Top + 120}, ${w * 0.22} ${sec3Top + 380}, ${w * 0.48} ${sec3Top + 420} `;
+            // Trails down to footer
+            d += `C ${w * 0.75} ${sec3Top + 480}, ${w * 0.65} ${h - 150}, ${w * 0.5} ${h} `;
+
+            [maskPath, mainPath, borderPath, shadowPath].forEach(el => {
+                if (el) el.setAttribute('d', d);
+            });
+
+            const length = maskPath.getTotalLength();
+            maskPath.style.strokeDasharray = length;
+            maskPath.style.strokeDashoffset = length;
+            maskPath.setAttribute('data-length', length);
+
+            updateScrollLine();
+        }
+
+        function updateScrollLine() {
+            const scrollPx = document.documentElement.scrollTop || document.body.scrollTop;
+            const winHeightPx = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            
+            const progressBar = document.getElementById('scroll-progress');
+            if (progressBar && winHeightPx > 0) {
+                progressBar.style.transform = `scaleX(${scrollPx / winHeightPx})`;
+            }
+
+            const maskPath = document.getElementById('mask-path');
+            if (maskPath && maskPath.getAttribute('data-length')) {
+                const length = parseFloat(maskPath.getAttribute('data-length'));
+                const progress = winHeightPx > 0 ? Math.min(1, Math.max(0, scrollPx / winHeightPx)) : 0;
+                
+                // Starts right at the tail in Hero, then grows down as you scroll!
+                const initialTip = 60;
+                const drawLength = initialTip + (length - initialTip) * progress;
+                const offset = Math.max(0, length - drawLength);
+                maskPath.style.strokeDashoffset = offset;
+            }
+        }
+
+        window.addEventListener('resize', setupScrollLine);
+        window.addEventListener('load', setupScrollLine);
+        document.addEventListener('DOMContentLoaded', setupScrollLine);
+        document.addEventListener('scroll', updateScrollLine);
+    </script>
+</body>
+</html>
